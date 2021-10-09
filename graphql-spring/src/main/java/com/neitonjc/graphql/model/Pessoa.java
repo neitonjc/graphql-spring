@@ -4,6 +4,8 @@ import java.util.Collection;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -39,6 +41,9 @@ public class Pessoa {
 	
 	@Column(name="UF")
 	private String uf;
+	
+	@Enumerated(EnumType.STRING)
+	private Genero genero;
 	
 	@OneToMany(mappedBy = "dono")
 	private Collection<Pet> pets;
@@ -141,6 +146,14 @@ public class Pessoa {
 
 	public void setPets(Collection<Pet> pets) {
 		this.pets = pets;
+	}
+
+	public Genero getGenero() {
+		return genero;
+	}
+
+	public void setGenero(Genero genero) {
+		this.genero = genero;
 	}
 
 	@Override

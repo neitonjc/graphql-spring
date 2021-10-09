@@ -2,7 +2,8 @@ type Pessoa{
 	cod: ID!
 	nome: String,
 	email: String,
-	bairro: String
+	bairro: String,
+	genero: String
 }
 
 type Pet {
