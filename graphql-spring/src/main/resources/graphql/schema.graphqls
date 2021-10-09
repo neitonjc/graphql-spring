@@ -1,0 +1,17 @@
+type Pessoa{
+	cod: ID!
+	nome: String,
+	email: String,
+	bairro: String
+}
+
+type Pet {
+	cod: ID!,
+	nome: String,
+	dono: Pessoa
+}
+
+type Query {
+	findAllPeople: [Pessoa]
+	findPeopleById(cod: Int): Pessoa
+}
