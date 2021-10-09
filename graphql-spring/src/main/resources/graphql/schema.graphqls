@@ -14,4 +14,7 @@ type Pet {
 type Query {
 	findAllPeople: [Pessoa]
 	findPeopleById(cod: Int): Pessoa
+	
+	findAllPets: [Pet]
+	findPetById(cod: Int): Pet
 }
