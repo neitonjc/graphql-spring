@@ -1,0 +1,35 @@
+{
+	"info": {
+		"_postman_id": "fd6552df-e60f-4b33-a8b4-e112139e5926",
+		"name": "graphql",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "query",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query{\r\n  findAllPets{\r\n    cod\r\n    nome\r\n    dono {\r\n      nome\r\n      email\r\n    }\r\n  }\r\n  \r\n  findPetById(cod:18){\r\n    nome\r\n    dono {\r\n      nome\r\n      email\r\n      bairro\r\n    }\r\n  }\r\n  \r\n  findAllPeople {\r\n    cod\r\n    nome\r\n  }\r\n  \r\n  findPeopleById(cod:3){\r\n    nome\r\n    email\r\n    bairro\r\n    genero\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
