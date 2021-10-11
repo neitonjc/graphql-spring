@@ -8,12 +8,93 @@
 		{
 			"name": "query",
 			"request": {
+				"auth": {
+					"type": "noauth"
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "graphql",
 					"graphql": {
-						"query": "query{\r\n  findAllPets{\r\n    cod\r\n    nome\r\n    dono {\r\n      nome\r\n      email\r\n    }\r\n  }\r\n  \r\n  findPetById(cod:18){\r\n    nome\r\n    dono {\r\n      nome\r\n      email\r\n      bairro\r\n    }\r\n  }\r\n  \r\n  findAllPeople {\r\n    cod\r\n    nome\r\n  }\r\n  \r\n  findPeopleById(cod:3){\r\n    nome\r\n    email\r\n    bairro\r\n    genero\r\n  }\r\n}",
+						"query": "query{\r\n  findAllPets{\r\n    cod\r\n    nome\r\n    dono {\r\n      nome\r\n      email\r\n      genero\r\n    }\r\n  }\r\n  \r\n  findPetById(cod:2){\r\n    nome\r\n    dono {\r\n      nome\r\n      email\r\n      bairro\r\n    }\r\n  }\r\n  \r\n  findAllPeople {\r\n    cod\r\n    nome\r\n  }\r\n  \r\n  findPeopleById(cod:3){\r\n    nome\r\n    email\r\n    bairro\r\n    genero\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mutation insert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation($pessoa:PessoaInput){\r\n  savePeople(p:$pessoa){\r\n    cod\r\n    nome\r\n    genero\r\n    email\r\n  }\r\n}",
+						"variables": "{\r\n  \"pessoa\": {\r\n    \"nome\": \"ELISHA CUTHBERT\",\r\n    \"genero\": \"FEMININO\",\r\n    \"email\": \"eli@bras.com\"\r\n  }\r\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mutation update",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation{\r\n  updateEmail(peopleId:1, email:\"joca@gmail.com\"){\r\n    cod,\r\n    nome,\r\n    email\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "subscription",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "subscription{\r\n  onPeopleUpdated(peopleId: 1){\r\n    nome\r\n    email\r\n  }\r\n}",
 						"variables": ""
 					}
 				},

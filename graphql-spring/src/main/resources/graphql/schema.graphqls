@@ -35,3 +35,7 @@ type Mutation{
 	savePeople(p: PessoaInput): Pessoa
 	updateEmail(peopleId: Int, email: String): Pessoa
 }
+
+type Subscription{
+	onPeopleUpdated(peopleId: Int): Pessoa
+}
