@@ -29,7 +29,7 @@ public class PessoaResolver implements GraphQLQueryResolver, GraphQLMutationReso
 		return rep.save(new Pessoa(p.nome, p.email, p.genero));
 	}
 	
-	public Pessoa updatePeople(Integer peopleId, String email) {
+	public Pessoa updateEmail(Integer peopleId, String email) {
 		Pessoa p = rep.findById(peopleId).get();
 		p.setEmail(email);
 		

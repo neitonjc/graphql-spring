@@ -33,5 +33,5 @@ input PessoaInput{
 
 type Mutation{
 	savePeople(p: PessoaInput): Pessoa
-	updatePeople(peopleId: Int, email: String): Pessoa
+	updateEmail(peopleId: Int, email: String): Pessoa
 }
