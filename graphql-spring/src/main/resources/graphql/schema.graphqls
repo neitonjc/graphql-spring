@@ -3,7 +3,12 @@ type Pessoa{
 	nome: String,
 	email: String,
 	bairro: String,
-	genero: String
+	genero: Genero
+}
+
+enum Genero {
+	MASCULINO
+	FEMININO
 }
 
 type Pet {
@@ -18,4 +23,15 @@ type Query {
 	
 	findAllPets: [Pet]
 	findPetById(cod: Int): Pet
+}
+
+input PessoaInput{
+	nome: String,
+	email: String,
+	genero: Genero
+}
+
+type Mutation{
+	savePeople(p: PessoaInput): Pessoa
+	updatePeople(peopleId: Int, email: String): Pessoa
 }

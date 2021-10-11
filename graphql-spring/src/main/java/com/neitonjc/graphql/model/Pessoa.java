@@ -69,6 +69,13 @@ public class Pessoa {
 		this.cep = cep;
 	}
 
+	public Pessoa(String nome, String email, Genero genero) {
+		super();
+		this.nome = nome;
+		this.email = email;
+		this.genero = genero;
+	}
+
 	public Pessoa() {
 		super();
 	}
