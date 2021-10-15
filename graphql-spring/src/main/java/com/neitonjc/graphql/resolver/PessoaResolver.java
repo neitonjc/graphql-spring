@@ -30,7 +30,7 @@ public class PessoaResolver implements GraphQLQueryResolver, GraphQLMutationReso
 	}
 	
 	public Pessoa findPeopleById(Integer cod) {
-		return rep.findById(cod).get();
+		return rep.findById(cod).orElse(null);
 	}
 	
 	public Pessoa savePeople(PessoaInput p) {
