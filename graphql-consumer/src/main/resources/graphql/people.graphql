@@ -1,0 +1,8 @@
+query{
+	findPeopleById(cod:$cod){
+	cod
+    nome
+    email
+    genero
+  }
+}
