@@ -1,2 +1,2 @@
 # graphql-spring
-Projeto demonstração de implementação GraphQL com Spring e base MySQL
+Repositório com implementação de servidor e cliente GraphQL com Spring e base MySQL
