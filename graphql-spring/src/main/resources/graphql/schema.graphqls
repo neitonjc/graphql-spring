@@ -1,5 +1,5 @@
 type Pessoa{
-	cod: ID!
+	cod: Int,
 	nome: String,
 	email: String,
 	bairro: String,
